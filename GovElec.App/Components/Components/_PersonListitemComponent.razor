@@ -1,0 +1,27 @@
+
+<a href="/persons/edit/@person!.Id">
+    <p>@Index @Name (@Age ans)</p>
+</a>
+
+
+
+
+
+@code{
+
+    [Parameter]
+    public Person? person{get;set;}
+
+    string Name{get;set;}=string.Empty;
+    int Index{get;set;}
+    int Age{get;set;}
+    
+
+    protected override void OnParametersSet(){
+        if(person != null){
+            Name= $"{person.FirstName} {person.LastName}";
+            Index=person.Id;
+            Age= (DateTime.Now.Year-person.BirthDate.Year);
+        }
+    }
+}

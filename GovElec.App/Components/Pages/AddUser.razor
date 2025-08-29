@@ -1,0 +1,41 @@
+@page "/persons/create"
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+
+<EditForm Model="person" FormName="CreatePeople" OnValidSubmit="OnSubmit">
+<div>
+    <label>Prénom</label>
+    <InputText @bind-Value="person.FirstName" class="form-control"/>
+</div>
+
+<div>
+    <label>Nom</label>
+    <InputText @bind-Value="person.LastName" class="form-control"/>
+</div>
+
+<div>
+    <label>Date de naissance</label>
+    <InputDate @bind-Value="person.BirthDate" class="form-control"/>
+</div>
+<br/>
+<div>
+    <button type="submit" class="btn btn-primary">Ajouter</button> <a href="/" Class="btn btn-danger">Annuler</a>
+</div>
+</EditForm>
+<br/>
+
+@code{
+    [SupplyParameterFromForm]
+    Person person{get;set;}=new();
+
+
+
+    private async Task OnSubmit(){
+        var response= await Http.PostAsJsonAsync<Person>("api/persons/create",person);
+        if(response.IsSuccessStatusCode){
+            Navigation.NavigateTo("/");
+        }
+    }
+}

@@ -1,0 +1,52 @@
+
+
+
+namespace GovElec.Api.Features.Users;
+
+public class CreateUserEndpoint : IEndpoint
+{
+    public void MapEndpoint(IEndpointRouteBuilder app)
+    {
+        app.MapPost("/api/users/create", async (UserForCreateCommand command, AppDbContext dbContext,IPasswordService passwordService) =>
+        {
+            var user = command.Adapt<User>();
+            if (user == null)
+            {
+                return Results.BadRequest("Les données sont incomplètes.");
+            }
+            if (command.Password != command.ConfirmPassword)
+            {
+                return Results.BadRequest("Le mot de passe et la confirmation du mot de passe ne correspondent pas.");
+            }
+
+            // Check if the user already exists
+            var existingUser = await dbContext.Users
+                .FirstOrDefaultAsync(u => u.UserName == user.UserName || u.Email == user.Email);
+
+            if (existingUser != null)
+            {
+                return Results.Conflict("Un utilisateur avec le même nom d'utilisateur ou le même email existes déjà.");
+            }
+            // Hasher le mot de passe
+            //user.PasswordSalt = BCrypt.Net.BCrypt.GenerateSalt();
+            //user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash, user.PasswordSalt);
+            user.Role = UserRole.User; // Default role
+            user.IsDeleted = false; // Default not deleted
+            user.Id = Guid.NewGuid(); // Generate a new GUID for the user ID
+            
+            // Add the new user to the database
+            dbContext.Users.Add(user);
+            await dbContext.SaveChangesAsync();
+            await passwordService.CreateAsync(command.UserName, command.Password);
+            
+            return Results.Created($"/api/users/{user.Id}", user);
+        }).WithTags("Users")
+          .Produces<User>(StatusCodes.Status201Created)
+          .Produces(StatusCodes.Status400BadRequest)
+          .Produces(StatusCodes.Status409Conflict)
+          .WithName("CreateUser")
+          .WithSummary("Crée un nouvel utilisateur.")
+          .WithDescription("This endpoint allows you to create a new user by providing the necessary user details.");
+    }
+
+}

@@ -1,0 +1,55 @@
+@page "/persons/edit/{id:int}"
+@using System.Threading.Tasks
+
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+
+<EditForm Model="person" FormName="CreatePeople" OnValidSubmit="OnSubmit">
+<div>
+    <label>Index</label>
+    <InputNumber @bind-Value="person.Id" class="form-control" ReadOnly=true/>
+</div>    
+<div>
+    <label>Prénom</label>
+    <InputText @bind-Value="person.FirstName" class="form-control"/>
+</div>
+
+<div>
+    <label>Nom</label>
+    <InputText @bind-Value="person.LastName" class="form-control"/>
+</div>
+
+<div>
+    <label>Date de naissance</label>
+    <InputDate @bind-Value="person.BirthDate" class="form-control"/>
+</div>
+<br/>
+<div>
+    <button type="submit" class="btn btn-primary">Valider</button> <a href="/" Class="btn btn-danger">Annuler</a>
+</div>
+</EditForm>
+<br/>
+
+@code{
+    [SupplyParameterFromForm]
+    Person person{get;set;}=new();
+
+    [Parameter]
+    public int Id{get;set;}
+
+    protected override async Task OnParametersSetAsync(){
+        //prem on va récupérer le user dans la bdd
+        var result=await Http.GetFromJsonAsync<Person>($"api/persons/get/{Id}");
+        if(result != null){
+            person=result;
+        }
+    }
+
+    private async Task OnSubmit(){
+        var response= await Http.PutAsJsonAsync<Person>("api/persons/create",person);
+        if(response.IsSuccessStatusCode){
+            Navigation.NavigateTo("/");
+        }
+    }
+}

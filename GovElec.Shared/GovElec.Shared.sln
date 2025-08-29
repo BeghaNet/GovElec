@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GovElec.Shared", "GovElec.Shared.csproj", "{A9401A9B-B5E0-E4FA-76DF-C94AD0152FA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9401A9B-B5E0-E4FA-76DF-C94AD0152FA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9401A9B-B5E0-E4FA-76DF-C94AD0152FA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9401A9B-B5E0-E4FA-76DF-C94AD0152FA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9401A9B-B5E0-E4FA-76DF-C94AD0152FA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {882C9F44-6AAB-4975-96BE-D2C9C821FD24}
+	EndGlobalSection
+EndGlobal
