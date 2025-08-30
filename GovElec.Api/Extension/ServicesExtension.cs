@@ -27,7 +27,7 @@ public static class ServicesExtension
         //services.AddSecurity(configuration);
 		services.AddSecurity2();
 		//services.Configure<TokenOptions>(configuration.GetSection("Jwt"));
-		services.AddOptions<JwtOptions>()
+		services.AddOptions<TokenOptions>()
 	      .Bind(configuration.GetSection("Jwt"))
 	      .Validate(o => !string.IsNullOrWhiteSpace(o.Issuer), "Jwt:Issuer missing")
 	      .Validate(o => !string.IsNullOrWhiteSpace(o.Audience), "Jwt:Audience missing")
@@ -143,9 +143,9 @@ public static class ServicesExtension
     }
 	private static IServiceCollection AddSecurity2(this IServiceCollection services)
 	{
-		static byte[] GetKeyBytes(JwtOptions o)
+		static byte[] GetKeyBytes(TokenOptions o)
 		{
-			if (o.SigninKeyIsBase64)
+			if (o.SignInKeyIsBase64)
 				return Convert.FromBase64String(o.SignInKey.Trim());
 
 			return Encoding.UTF8.GetBytes(o.SignInKey.Trim());
@@ -160,7 +160,7 @@ public static class ServicesExtension
 		    .AddJwtBearer(options =>
 		    {
 			    var serviceProvider = services.BuildServiceProvider();
-			    var jwt = serviceProvider.GetRequiredService<IOptions<JwtOptions>>().Value;
+			    var jwt = serviceProvider.GetRequiredService<IOptions<TokenOptions>>().Value;
 			    var keyBytes = GetKeyBytes(jwt);
 			    if (keyBytes.Length < 32)
 				    throw new InvalidOperationException("Jwt:SigninKey too short (min 256 bits recommended).");
