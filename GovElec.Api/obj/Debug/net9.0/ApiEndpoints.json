@@ -1,0 +1,440 @@
+[
+  {
+    "ContainingType": "GovElec.Api.Features.Authorization.LoginEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "GovElec.Shared.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ]
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.GetAllPersonsEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/persons",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Persons"
+    ],
+    "EndpointName": "GetAllPersons",
+    "Description": "Ce endpoint renvoie une liste d\u0027objets Person avec des informations fictives.",
+    "Summary": "Renvoie la liste de toutes les personnes."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.UpdatePersonEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/persons/{id:int}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "GovElec.Shared.Person",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Persons"
+    ],
+    "EndpointName": "UpdatePerson",
+    "Description": "Ce endpoint met \u00E0 jour les informations d\u0027une personne existante dans la base de donn\u00E9es.",
+    "Summary": "Met \u00E0 jour les informations d\u0027une personne."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.CreatePersonEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/persons/create",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "GovElec.Shared.Person",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Persons"
+    ],
+    "EndpointName": "CreatePerson",
+    "Description": "Ce endpoint cr\u00E9e une nouvelle personne dans la base de donn\u00E9es.",
+    "Summary": "Cr\u00E9e une nouvelle personne."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.DeletePersonEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/persons/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Persons"
+    ],
+    "EndpointName": "GetPerson",
+    "Description": "Ce endpoint renvoie un objet Person avec des informations fictives.",
+    "Summary": "Renvoie les informations d\u0027une personne."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.GetPersonByIdEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/persons/get/{id:int}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Persons"
+    ],
+    "EndpointName": "GetPersonsById",
+    "Description": "Ce endpoint renvoie une liste d\u0027objets Person avec des informations fictives.",
+    "Summary": "Renvoie la liste de toutes les personnes."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Authorization.TestTokenEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/test/{token}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Users.GetAllUsersEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/users",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[GovElec.Api.Models.User, GovElec.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "GetAllUsers",
+    "Description": "This endpoint allows you to retrieve all users in the system.",
+    "Summary": "R\u00E9cup\u00E8re tous les utilisateurs."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Users.GetUserByIdEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/users/byid/{id:guid}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GovElec.Api.Models.User",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "GetUserById",
+    "Description": "This endpoint allows you to retrieve the details of an existing user by providing the user\u0027s ID.",
+    "Summary": "R\u00E9cup\u00E8re les d\u00E9tails d\u0027un utilisateur existant."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Users.GetUserByNameEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/users/byname/{username}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "username",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GovElec.Api.Models.User",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "GetUserByName",
+    "Description": "This endpoint allows you to retrieve the details of an existing user by providing the username.",
+    "Summary": "R\u00E9cup\u00E8re les d\u00E9tails d\u0027un utilisateur existant."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Users.CreateUserEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/users/create",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "GovElec.Shared.UserForCreateCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GovElec.Api.Models.User",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 409
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "CreateUser",
+    "Description": "This endpoint allows you to create a new user by providing the necessary user details.",
+    "Summary": "Cr\u00E9e un nouvel utilisateur."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Users.DeleteUserEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/users/delete",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "GovElec.Shared.UserForDeleteCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "DeleteUser",
+    "Description": "This endpoint allows you to soft delete an existing user by providing the user\u0027s ID.",
+    "Summary": "Supprime un utilisateur existant."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.Users.UpdateUserEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/users/update/{id:guid}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "GovElec.Shared.UserForUpdateCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "GovElec.Api.Models.User",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 404
+      }
+    ],
+    "Tags": [
+      "Users"
+    ],
+    "EndpointName": "UpdateUser",
+    "Description": "This endpoint allows you to update the details of an existing user by providing the user\u0027s ID and the new details.",
+    "Summary": "Met \u00E0 jour les d\u00E9tails d\u0027un utilisateur existant."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.HelloWorldEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "hello",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "HelloWorld",
+    "Description": "Ce endpoint renvoie un simple message \u0027Hello, World!\u0027.",
+    "Summary": "Renvoie un message d\u0027acceuil."
+  },
+  {
+    "ContainingType": "GovElec.Api.Features.WeatherforecastEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "weatherforecast",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "GovElec.Api.Models.WeatherForecast[]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Tests"
+    ],
+    "EndpointName": "WeatherForecast",
+    "Description": "Ce endpoint renvoie une liste de temp\u00E9ratures al\u00E9atoires afin de tester la communication avec l\u0027Api.",
+    "Summary": "Renvoie une liste de temp\u00E9ratures al\u00E9atoires."
+  }
+]

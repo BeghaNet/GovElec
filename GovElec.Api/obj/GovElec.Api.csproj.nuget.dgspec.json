@@ -1,33 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Api\\GovElec.Api.csproj": {}
+    "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\GovElec.Api.csproj": {}
   },
   "projects": {
-    "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Api\\GovElec.Api.csproj": {
+    "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\GovElec.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Api\\GovElec.Api.csproj",
+        "projectUniqueName": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\GovElec.Api.csproj",
         "projectName": "GovElec.Api",
-        "projectPath": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Api\\GovElec.Api.csproj",
-        "packagesPath": "C:\\Users\\BG841772\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Api\\obj\\",
+        "projectPath": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\GovElec.Api.csproj",
+        "packagesPath": "C:\\Users\\berna\\.nuget\\packages\\",
+        "outputPath": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BG841772\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\berna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "L:\\Projects\\MicroServices\\packeges": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Shared\\GovElec.Shared.csproj": {
-                "projectPath": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Shared\\GovElec.Shared.csproj"
+              "K:\\GitHub Desktop\\GovElec\\GovElec.Shared\\GovElec.Shared.csproj": {
+                "projectPath": "K:\\GitHub Desktop\\GovElec\\GovElec.Shared\\GovElec.Shared.csproj"
               }
             }
           }
@@ -51,6 +58,10 @@
             "Mapster": {
               "target": "Package",
               "version": "[7.4.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.8, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -104,26 +115,33 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Shared\\GovElec.Shared.csproj": {
+    "K:\\GitHub Desktop\\GovElec\\GovElec.Shared\\GovElec.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Shared\\GovElec.Shared.csproj",
+        "projectUniqueName": "K:\\GitHub Desktop\\GovElec\\GovElec.Shared\\GovElec.Shared.csproj",
         "projectName": "GovElec.Shared",
-        "projectPath": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Shared\\GovElec.Shared.csproj",
-        "packagesPath": "C:\\Users\\BG841772\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\BG841772\\Projets_VsCode\\BlazorToApi\\GovElec.Shared\\obj\\",
+        "projectPath": "K:\\GitHub Desktop\\GovElec\\GovElec.Shared\\GovElec.Shared.csproj",
+        "packagesPath": "C:\\Users\\berna\\.nuget\\packages\\",
+        "outputPath": "K:\\GitHub Desktop\\GovElec\\GovElec.Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\BG841772\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\berna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "L:\\Projects\\MicroServices\\packeges": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -163,7 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

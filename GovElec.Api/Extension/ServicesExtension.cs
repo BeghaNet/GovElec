@@ -3,6 +3,11 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.OpenApi.Models;
 using GovElec.Api.Data;
 using GovElec.Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.Extensions.Options;
+using System.Security.Cryptography;
 namespace GovElec.Api.Extension;
 
 public static class ServicesExtension
@@ -19,13 +24,21 @@ public static class ServicesExtension
         services.AddEndpointsApiExplorer();
         services.AddApiEndpoints(typeof(Program).Assembly);
         services.AddAppDbContext(configuration);
+        //services.AddSecurity(configuration);
+		services.AddSecurity2();
+		//services.Configure<TokenOptions>(configuration.GetSection("Jwt"));
+		services.AddOptions<JwtOptions>()
+	      .Bind(configuration.GetSection("Jwt"))
+	      .Validate(o => !string.IsNullOrWhiteSpace(o.Issuer), "Jwt:Issuer missing")
+	      .Validate(o => !string.IsNullOrWhiteSpace(o.Audience), "Jwt:Audience missing")
+	      .Validate(o => !string.IsNullOrWhiteSpace(o.SignInKey), "Jwt:SigninKey missing")
+	      .ValidateOnStart();
 
-        services.Configure<TokenOptions>(configuration.GetSection("Jwt"));
-        services.AddSingleton<ITokenService, TokenService>();
+		services.AddSingleton<ITokenService, TokenService>();
         
         services.AddCorsService();
-        services.AddOpenApi();
-        services.AddSwagger();
+        
+        services.AddDocumentation();
         //builder.Services.AddControllers();
 
         services.AddScoped<IPersonService, PersonService>();
@@ -50,41 +63,38 @@ public static class ServicesExtension
         services.TryAddEnumerable(serviceDescriptors);
         return services;
     }
-    private static IServiceCollection AddSwagger(this IServiceCollection services)
+    private static IServiceCollection AddDocumentation(this IServiceCollection services)
     {
-        //services.AddOpenApi();
-        services.AddSwaggerGen();
-        // services.AddSwaggerGen(c=>
-        // {
-        //     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-        //     {
-        //         Name = "Authorization",
-        //         Type = SecuritySchemeType.Http,
-        //         Scheme = "Bearer",
-        //         BearerFormat = "JWT",
-        //         In = ParameterLocation.Header,
-        //         Description = "Entrez votre token au format : Bearer {votre_token}"
-        //     });
-        //     c.AddSecurityRequirement(new OpenApiSecurityRequirement
-        //     {
-        //         {
-        //             new OpenApiSecurityScheme{
-        //                 Reference=new OpenApiReference{
-        //                     Type=ReferenceType.SecurityScheme,
-        //                     Id="Bearer"
-        //                 }
-        //             },
-        //             new string[]{}
-        //         }
-        //     });
-        // c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-        // {
-        //     Title = "GovElec API",
-        //     Version = "v1",
-        //     Description = "API for GovElec application"
-        // });
-
-        //});
+        services.AddOpenApi();
+          services.AddSwaggerGen(options =>
+          {
+               var securityDefinition = new OpenApiSecurityScheme
+               {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme=JwtBearerDefaults.AuthenticationScheme,
+                    BearerFormat= "JWT",
+				In = ParameterLocation.Header,
+                    Description="N'utiliser que le Token"
+			};
+			options.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, securityDefinition);
+			var securityRequirement = new OpenApiSecurityRequirement
+			{
+				{
+                         new OpenApiSecurityScheme
+                         {
+						Reference = new OpenApiReference
+						{
+							Type = ReferenceType.SecurityScheme,
+							Id = JwtBearerDefaults.AuthenticationScheme
+						}
+					}, 
+                         new string[] { }
+                    }
+			};
+			options.AddSecurityRequirement(securityRequirement);
+		});
+        
         return services;
     }
 
@@ -108,7 +118,97 @@ public static class ServicesExtension
         });
         return services;
     }
-    
-    
+    private static IServiceCollection AddSecurity(this IServiceCollection services,IConfiguration configuration)
+    {
+          services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+               .AddJwtBearer(options =>
+               {
+				var secret = (configuration["Jwt:SigninKey"] ?? "").Trim(); // même chemin que côté émission !
+				var keyBytes = Encoding.UTF8.GetBytes(secret); // si votre clé est en clair; si elle est Base64, utilisez Convert.FromBase64String
+				var signingKey = new SymmetricSecurityKey(keyBytes);
+				options.TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidateIssuer = true,
+					ValidateAudience = true,
+					ValidateLifetime = true,
+					ValidateIssuerSigningKey = true,
+					ValidIssuer = configuration["Jwt:Issuer"],
+					ValidAudience = configuration["Jwt:Audience"],
+					IssuerSigningKey = signingKey,
+					ClockSkew = TimeSpan.Zero
+				};
+			});
+         services.AddAuthorization();
+		return services;
+    }
+	private static IServiceCollection AddSecurity2(this IServiceCollection services)
+	{
+		static byte[] GetKeyBytes(JwtOptions o)
+		{
+			if (o.SigninKeyIsBase64)
+				return Convert.FromBase64String(o.SignInKey.Trim());
+
+			return Encoding.UTF8.GetBytes(o.SignInKey.Trim());
+		}
+
+		services
+		    .AddAuthentication(options =>
+		    {
+			    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+			    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+		    })
+		    .AddJwtBearer(options =>
+		    {
+			    var serviceProvider = services.BuildServiceProvider();
+			    var jwt = serviceProvider.GetRequiredService<IOptions<JwtOptions>>().Value;
+			    var keyBytes = GetKeyBytes(jwt);
+			    if (keyBytes.Length < 32)
+				    throw new InvalidOperationException("Jwt:SigninKey too short (min 256 bits recommended).");
+
+			    // Log non-sensible: length + hash (useful for diagnosing overrides)
+			    var hash = Convert.ToHexString(SHA256.HashData(keyBytes))[..16];
+			    Console.WriteLine($"[JWT] keyLen={keyBytes.Length} sha256={hash} issuer={jwt.Issuer} audience={jwt.Audience}");
+
+			    options.RequireHttpsMetadata = !serviceProvider.GetRequiredService<IHostEnvironment>().IsDevelopment(); // https in prod
+			    options.SaveToken = true;
+			    options.TokenValidationParameters = new TokenValidationParameters
+			    {
+				    ValidateIssuerSigningKey = true,
+				    IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+				    ValidateIssuer = true,
+				    ValidIssuer = jwt.Issuer,
+				    ValidateAudience = true,
+				    ValidAudience = jwt.Audience,
+				    ValidateLifetime = true,
+				    ClockSkew = TimeSpan.FromMinutes(1) // strict but not punitive
+			    };
+
+			    options.Events = new JwtBearerEvents
+			    {
+				    OnMessageReceived = ctx =>
+				  {
+					  if (!string.IsNullOrEmpty(ctx.Token))
+					  {
+						  var jwtHandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
+						  var token = jwtHandler.ReadJwtToken(ctx.Token);
+						  Console.WriteLine($"[JWT] token alg={token.Header.Alg} kid={token.Header.Kid ?? "(none)"}");
+					  }
+					  return Task.CompletedTask;
+				  },
+				    OnAuthenticationFailed = ctx =>
+				  {
+					  Console.WriteLine($"[JWT] FAILED {ctx.Exception.GetType().Name}: {ctx.Exception.Message}");
+					  return Task.CompletedTask;
+				  }
+			    };
+		    });
+
+		services.AddAuthorization(options =>
+		{
+			// Example: a policy based on Role
+			options.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
+		});
+		return services;
+	}
 
 }
