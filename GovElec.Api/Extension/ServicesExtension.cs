@@ -23,19 +23,17 @@ public static class ServicesExtension
 
         services.AddEndpointsApiExplorer();
         services.AddApiEndpoints(typeof(Program).Assembly);
-        services.AddAppDbContext(configuration);
-        //services.AddSecurity(configuration);
-		services.AddSecurity2();
+		services.AddScoped<ITokenService, TokenService>();
+		services.AddAppDbContext(configuration);
+		//services.AddSecurity(configuration);
+		services.AddSecurity();
 		//services.Configure<TokenOptions>(configuration.GetSection("Jwt"));
 		services.AddOptions<TokenOptions>()
-	      .Bind(configuration.GetSection("Jwt"))
-	      .Validate(o => !string.IsNullOrWhiteSpace(o.Issuer), "Jwt:Issuer missing")
-	      .Validate(o => !string.IsNullOrWhiteSpace(o.Audience), "Jwt:Audience missing")
-	      .Validate(o => !string.IsNullOrWhiteSpace(o.SignInKey), "Jwt:SigninKey missing")
-	      .ValidateOnStart();
-
-		services.AddSingleton<ITokenService, TokenService>();
-        
+			.Bind(configuration.GetSection("Jwt"))
+			.Validate(o => !string.IsNullOrWhiteSpace(o.Issuer), "Jwt:Issuer missing")
+			.Validate(o => !string.IsNullOrWhiteSpace(o.Audience), "Jwt:Audience missing")
+			.Validate(o => !string.IsNullOrWhiteSpace(o.SignInKey), "Jwt:SigninKey missing")
+			.ValidateOnStart();
         services.AddCorsService();
         
         services.AddDocumentation();
@@ -118,30 +116,7 @@ public static class ServicesExtension
         });
         return services;
     }
-    private static IServiceCollection AddSecurity(this IServiceCollection services,IConfiguration configuration)
-    {
-          services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-               .AddJwtBearer(options =>
-               {
-				var secret = (configuration["Jwt:SigninKey"] ?? "").Trim(); // même chemin que côté émission !
-				var keyBytes = Encoding.UTF8.GetBytes(secret); // si votre clé est en clair; si elle est Base64, utilisez Convert.FromBase64String
-				var signingKey = new SymmetricSecurityKey(keyBytes);
-				options.TokenValidationParameters = new TokenValidationParameters
-				{
-					ValidateIssuer = true,
-					ValidateAudience = true,
-					ValidateLifetime = true,
-					ValidateIssuerSigningKey = true,
-					ValidIssuer = configuration["Jwt:Issuer"],
-					ValidAudience = configuration["Jwt:Audience"],
-					IssuerSigningKey = signingKey,
-					ClockSkew = TimeSpan.Zero
-				};
-			});
-         services.AddAuthorization();
-		return services;
-    }
-	private static IServiceCollection AddSecurity2(this IServiceCollection services)
+    private static IServiceCollection AddSecurity(this IServiceCollection services)
 	{
 		static byte[] GetKeyBytes(TokenOptions o)
 		{

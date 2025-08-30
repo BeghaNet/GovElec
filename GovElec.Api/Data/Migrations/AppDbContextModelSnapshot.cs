@@ -139,6 +139,30 @@ namespace GovElec.Api.Data.Migrations
                     b.ToTable("Demandes");
                 });
 
+            modelBuilder.Entity("GovElec.Api.Models.RefreshToken", b =>
+                {
+                    b.Property<string>("Token")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ExpiresUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Token");
+
+                    b.ToTable("RefreshTokens");
+                });
+
             modelBuilder.Entity("GovElec.Api.Models.User", b =>
                 {
                     b.Property<Guid>("Id")

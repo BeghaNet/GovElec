@@ -22,7 +22,7 @@ public class LoginEndpoint : IEndpoint
             if (!tryPassword) return Results.BadRequest("Le mot de passe ne correspond pas.");
 
             // Creation du token
-            var (accessToken , refreshToken, exp) = tokenService.CreateToken(user);
+            var (accessToken , refreshToken, exp) = await tokenService.CreateTokenAsync(request.Username);
 
             return Results.Ok(new TokenResponse(accessToken, refreshToken, exp));
 

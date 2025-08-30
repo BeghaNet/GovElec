@@ -6,8 +6,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 {
     public DbSet<Models.Demande> Demandes { get; set; } = null!;
     public DbSet<Models.User> Users { get; set; } = null!;
+     public DbSet<Models.RefreshToken> RefreshTokens { get; set; } = null!;
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // modelBuilder.Entity<Models.Demande>().ToTable("Demandes");
         // modelBuilder.Entity<Models.User>().ToTable("Users");
@@ -21,5 +22,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             .WithMany(u => u.DemandesAssignees)
             .HasForeignKey(d => d.TechnicienId)
             .OnDelete(DeleteBehavior.Restrict);
-    }
+          modelBuilder.Entity<RefreshToken>()
+            .HasKey(t => t.Token);
+		
+	}
 }

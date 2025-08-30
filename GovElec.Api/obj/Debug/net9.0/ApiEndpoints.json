@@ -164,6 +164,28 @@
     "Summary": "Renvoie la liste de toutes les personnes."
   },
   {
+    "ContainingType": "GovElec.Api.Features.Authorization.RefreshTokendEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ],
+    "EndpointName": "RefreshToken",
+    "Description": "Ce endpoint permet de renouveler le token d\u0027acc\u00E8s en fournissant un token de rafra\u00EEchissement valide.",
+    "Summary": "Renouvelle le token d\u0027acc\u00E8s en utilisant un token de rafra\u00EEchissement valide."
+  },
+  {
     "ContainingType": "GovElec.Api.Features.Authorization.TestTokenEndpoint\u002B\u003C\u003Ec",
     "Method": "\u003CMapEndpoint\u003Eb__0_0",
     "RelativePath": "api/test/{token}",
