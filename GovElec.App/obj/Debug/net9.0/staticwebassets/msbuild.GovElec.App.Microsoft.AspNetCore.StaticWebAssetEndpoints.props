@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GovElec.App.4cnbkvjtzj.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4cnbkvjtzj"},{"Name":"integrity","Value":"sha256-HNXCu8lRJ32H3/rbpNsHFrLtRD8y0l6OikWsG5A0z7M="},{"Name":"label","Value":"_content/GovElec.App/GovElec.App.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5969"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HNXCu8lRJ32H3/rbpNsHFrLtRD8y0l6OikWsG5A0z7M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 31 Aug 2025 06:49:41 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5969"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HNXCu8lRJ32H3/rbpNsHFrLtRD8y0l6OikWsG5A0z7M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 31 Aug 2025 09:37:20 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GovElec.App/GovElec.App.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GovElec.App.4cnbkvjtzj.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HNXCu8lRJ32H3/rbpNsHFrLtRD8y0l6OikWsG5A0z7M="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5969"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HNXCu8lRJ32H3/rbpNsHFrLtRD8y0l6OikWsG5A0z7M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 31 Aug 2025 06:49:41 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5969"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HNXCu8lRJ32H3/rbpNsHFrLtRD8y0l6OikWsG5A0z7M=\u0022"},{"Name":"Last-Modified","Value":"Sun, 31 Aug 2025 09:37:20 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GovElec.App/lib/bootstrap/dist/css/bootstrap-grid.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap-grid.css'))</AssetFile>

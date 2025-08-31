@@ -2,10 +2,15 @@
 
 namespace GovElec.App.Services;
 
-public class TokenService(CookieService cookieService,IHttpClientFactory httpFactory)
+public class TokenService(
+	CookieService cookieService,
+	IHttpClientFactory httpFactory,
+	ILogger<TokenService> logger)
 {
 	private const string tokenKey="token";
 	private const string refreskKey = "refreshToken";
+	
+
 	public async Task<string> GetToken()
 	{
 		var token=cookieService.Get(tokenKey);
@@ -81,7 +86,7 @@ public class TokenService(CookieService cookieService,IHttpClientFactory httpFac
 		return jwt?.Claims??Enumerable.Empty<Claim>();
 	}
 
-	private static string NormalizeToken(string? token)
+	private string NormalizeToken(string? token)
 	{
 		if (string.IsNullOrWhiteSpace(token)) return string.Empty;
 
@@ -99,7 +104,8 @@ public class TokenService(CookieService cookieService,IHttpClientFactory httpFac
 		// 3) Certaines API renvoient "null"
 		if (string.Equals(token, "null", StringComparison.OrdinalIgnoreCase))
 			return string.Empty;
-
+		
+		logger.LogInformation("Normalized token: {Token}", token);
 		return token;
 	}
 }

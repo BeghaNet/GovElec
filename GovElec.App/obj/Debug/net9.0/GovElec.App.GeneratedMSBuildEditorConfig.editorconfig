@@ -28,24 +28,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXEFjY2Vzc0RlbmllZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/EditUser.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXEVkaXRVc2VyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/ListUsers.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExpc3RVc2Vycy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/Login.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExvZ2luLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/Logout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExvZ291dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXFJlZ2lzdGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Components/_PersonListitemComponent.razor]
@@ -90,6 +78,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/ReadCookie.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWFkQ29va2llLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/Users/EditUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xFZGl0VXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/Users/ListUsers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xMaXN0VXNlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/Users/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xSZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/Weather.razor]
