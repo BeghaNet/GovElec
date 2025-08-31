@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GovElec.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edfd0177d0da701b6ab393f3326501bb4812eefa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d84b9671673a0757b008d57446e1ca53aa8a4c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GovElec.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GovElec.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
