@@ -10,7 +10,8 @@ public class CreateUserEndpoint : IEndpoint
         app.MapPost("/api/users/create", async (UserForCreateCommand command, AppDbContext dbContext,IPasswordService passwordService) =>
         {
             var user = command.Adapt<User>();
-            if (user == null)
+             user.UserName = user.UserName.ToUpper();
+		   if (user == null)
             {
                 return Results.BadRequest("Les données sont incomplètes.");
             }
@@ -30,7 +31,7 @@ public class CreateUserEndpoint : IEndpoint
             // Hasher le mot de passe
             //user.PasswordSalt = BCrypt.Net.BCrypt.GenerateSalt();
             //user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash, user.PasswordSalt);
-            user.Role = UserRole.User; // Default role
+            user.Role = command.Role; // Default role
             user.IsDeleted = false; // Default not deleted
             user.Id = Guid.NewGuid(); // Generate a new GUID for the user ID
             

@@ -16,7 +16,8 @@ public class GetUserByIdEndpoint : IEndpoint
             }
             var response= user.Adapt<UserForReadResponse>();
             return Results.Ok(response);
-        }).WithTags("Users")
+        }).RequireAuthorization("SelfOrAdmin") // Only Admins or the user themselves can get user by id
+		.WithTags("Users")
           .Produces<User>(StatusCodes.Status200OK)
           .Produces(StatusCodes.Status404NotFound)
           .WithName("GetUserById")

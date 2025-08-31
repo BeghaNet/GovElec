@@ -182,6 +182,35 @@ public static class ServicesExtension
 		{
 			// Example: a policy based on Role
 			options.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
+			options.AddPolicy("SuperAdminOnly", p => p.RequireRole("SuperAdmin"));
+			options.AddPolicy("UserOnly", p => p.RequireRole("User","Admin","SuperAdmin"));
+			options.AddPolicy("ButOnly", p => p.RequireRole("But","Admin","SuperAdmin"));
+			options.AddPolicy("AnyLoggedUser", p => p.RequireAuthenticatedUser());
+			options.AddPolicy("SelfOrAdmin", policy =>
+	   policy.RequireAuthenticatedUser()
+		    .RequireAssertion(ctx =>
+		    {
+			    var user = ctx.User;
+
+			    // Admin ? → OK
+			    if (user.IsInRole("Admin")) return true;
+			    if (user.IsInRole("SuperAdmin")) return true;
+			    // Comparer l'id de la route avec l'id du user
+			    if (ctx.Resource is HttpContext http)
+			    {
+				    // nom du paramètre de route : ici "id"
+				    var routeId = http.Request.RouteValues["username"]?.ToString();
+
+				    // quel claim contient l'identité "métier" ?
+				    var userId =
+					   user.FindFirst(ClaimTypes.Name)?.Value;       // ← chez toi, c'est souvent Name
+
+				    return !string.IsNullOrEmpty(routeId)
+						 && !string.IsNullOrEmpty(userId)
+						 && string.Equals(routeId, userId, StringComparison.OrdinalIgnoreCase);
+			    }
+			    return false;
+		    }));
 		});
 
 		

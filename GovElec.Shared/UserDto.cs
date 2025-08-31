@@ -8,7 +8,7 @@ public class UserForCreateCommand
     public string Phone { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public string ConfirmPassword { get; set; } = string.Empty;
-    public UserRole Role { get; set; } = UserRole.User; // Default role
+    public string Role { get; set; } = "User"; // Default role
 }
 public class UserForUpdateCommand
 {
@@ -18,7 +18,7 @@ public class UserForUpdateCommand
     public string Equipe { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
-    public UserRole Role { get; set; } = UserRole.User; // Default role
+    public string Role { get; set; } = "User"; // Default role
     public string OldPassword { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
     public string ConfirmPassword { get; set; } = string.Empty;
@@ -53,7 +53,7 @@ public class UserForReadResponse
     public string Equipe { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
-    public UserRole Role { get; set; } = UserRole.User; // Default role
+    public string Role { get; set; } = "User"; // Default role
     public bool IsDeleted { get; set; } = false;
 }
 public class UserForListResponse
@@ -62,6 +62,6 @@ public class UserForListResponse
     public string UserName { get; set; } = string.Empty;
     public string FullName { get; set; } = string.Empty;
     public string Equipe { get; set; } = string.Empty;
-    public UserRole Role { get; set; } = UserRole.User; // Default role
+    public string Role { get; set; } = "User"; // Default role
     public bool IsDeleted { get; set; } = false;
 }
