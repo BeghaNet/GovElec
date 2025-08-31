@@ -19,3 +19,15 @@ GovElec.Api/obj/Debug/net9.0/GovElec.Api.AssemblyInfo.cs
 /GovElec.Api/obj/Debug/net9.0
 /.vs
 /.vs
+.vs/GovElec/CopilotIndices/17.13.444.19527/CodeChunks.db
+.vs/GovElec/CopilotIndices/17.13.444.19527/CodeChunks.db
+/.vs
+*.db
+.vs/GovElec/v17/.suo
+/.vs
+GovElec.Api/Data/GovElecDb.db
+GovElec.Api/Data/GovElecDb.db-shm
+*.db-wal
+*.db-shm
+/GovElec.Api/Data/Migrations
+/GovElec.Api/obj
