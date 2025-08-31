@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GovElec.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43939ce7767ad09e02adf5988edee1fbe7445f66")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edfd0177d0da701b6ab393f3326501bb4812eefa")]
 [assembly: System.Reflection.AssemblyProductAttribute("GovElec.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GovElec.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

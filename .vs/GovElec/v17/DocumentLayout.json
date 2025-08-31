@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "K:\\GitHub Desktop\\GovElec\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\features\\authorization\\logoutendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\features\\authorization\\logoutendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\components\\_userlistitem.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\components\\_userlistitem.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\features\\authorization\\refreshtokendendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\features\\authorization\\refreshtokendendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\auth\\listusers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\auth\\listusers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\features\\authorization\\loginendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\features\\authorization\\loginendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\auth\\edituser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\auth\\edituser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Data\\Migrations\\20250830130433_AddRefreshTokenTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GovElec.Api\\Data\\Migrations\\20250830130433_AddRefreshTokenTable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\extensions\\tokenextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\extensions\\tokenextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\extension\\servicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\extension\\servicesextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\auth\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\auth\\logout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\components\\_redirecttoaccessdenied.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\components\\_redirecttoaccessdenied.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\extension\\applicationextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\extension\\applicationextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|k:\\github desktop\\govelec\\govelec.api\\features\\weatherforecastendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E8B409E-F7FB-43B5-A765-47A9E1E8B762}|GovElec.Api\\GovElec.Api.csproj|solutionrelative:govelec.api\\features\\weatherforecastendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|k:\\github desktop\\govelec\\govelec.app\\components\\components\\_redirecttologin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C39402EF-5B7F-4063-9D67-C63C50C180C3}|GovElec.App\\GovElec.App.csproj|solutionrelative:govelec.app\\components\\components\\_redirecttologin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -143,148 +139,131 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LogoutEndpoint.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\Authorization\\LogoutEndpoint.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Features\\Authorization\\LogoutEndpoint.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\Authorization\\LogoutEndpoint.cs",
-              "RelativeToolTip": "GovElec.Api\\Features\\Authorization\\LogoutEndpoint.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T13:40:45.465Z",
+              "Title": "_UserListitem.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Components\\_UserListitem.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Components\\_UserListitem.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Components\\_UserListitem.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Components\\_UserListitem.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:45:42.561Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RefreshTokendEndpoint.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\Authorization\\RefreshTokendEndpoint.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Features\\Authorization\\RefreshTokendEndpoint.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\Authorization\\RefreshTokendEndpoint.cs",
-              "RelativeToolTip": "GovElec.Api\\Features\\Authorization\\RefreshTokendEndpoint.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T13:14:52.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Data\\AppDbContext.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "GovElec.Api\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAqwBoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T12:09:12.062Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Token.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Models\\Token.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Models\\Token.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Models\\Token.cs",
-              "RelativeToolTip": "GovElec.Api\\Models\\Token.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T12:05:01.504Z",
+              "Title": "ListUsers.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Auth\\ListUsers.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Auth\\ListUsers.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Auth\\ListUsers.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Auth\\ListUsers.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:45:13.854Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginEndpoint.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\Authorization\\LoginEndpoint.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Features\\Authorization\\LoginEndpoint.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\Authorization\\LoginEndpoint.cs",
-              "RelativeToolTip": "GovElec.Api\\Features\\Authorization\\LoginEndpoint.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAUwBoAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T09:15:10.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Services\\TokenService.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Services\\TokenService.cs",
-              "RelativeToolTip": "GovElec.Api\\Services\\TokenService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAowCYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T09:12:53.836Z",
+              "Title": "EditUser.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Auth\\EditUser.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Auth\\EditUser.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Auth\\EditUser.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Auth\\EditUser.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:44:51.351Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "20250830130433_AddRefreshTokenTable.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Data\\Migrations\\20250830130433_AddRefreshTokenTable.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Data\\Migrations\\20250830130433_AddRefreshTokenTable.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Data\\Migrations\\20250830130433_AddRefreshTokenTable.cs",
-              "RelativeToolTip": "GovElec.Api\\Data\\Migrations\\20250830130433_AddRefreshTokenTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "GovElec.App\\Services\\TokenService.cs",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Services\\TokenService.cs",
+              "RelativeToolTip": "GovElec.App\\Services\\TokenService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAqwCEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T13:04:34.186Z",
+              "WhenOpened": "2025-08-31T08:26:23.609Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "GovElec.Api\\appsettings.json",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\appsettings.json",
-              "RelativeToolTip": "GovElec.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-30T09:32:22.911Z",
+              "DocumentIndex": 5,
+              "Title": "TokenExtension.cs",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Extensions\\TokenExtension.cs",
+              "RelativeDocumentMoniker": "GovElec.App\\Extensions\\TokenExtension.cs",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Extensions\\TokenExtension.cs",
+              "RelativeToolTip": "GovElec.App\\Extensions\\TokenExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-31T08:30:12.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAABAAAAAAAAAAAAAqwBoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:23:50.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ServicesExtension.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Extension\\ServicesExtension.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Extension\\ServicesExtension.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Extension\\ServicesExtension.cs",
-              "RelativeToolTip": "GovElec.Api\\Extension\\ServicesExtension.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T09:10:54.488Z",
+              "Title": "Logout.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Auth\\Logout.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Auth\\Logout.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Auth\\Logout.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Auth\\Logout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:20:27.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "ApplicationExtension.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Extension\\ApplicationExtension.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Extension\\ApplicationExtension.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Extension\\ApplicationExtension.cs",
-              "RelativeToolTip": "GovElec.Api\\Extension\\ApplicationExtension.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwA0AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T09:44:06.801Z",
+              "Title": "_RedirectToLogin.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Components\\_RedirectToLogin.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Components\\_RedirectToLogin.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Components\\_RedirectToLogin.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Components\\_RedirectToLogin.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:06:35.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "WeatherforecastEndpoint.cs",
-              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\WeatherforecastEndpoint.cs",
-              "RelativeDocumentMoniker": "GovElec.Api\\Features\\WeatherforecastEndpoint.cs",
-              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.Api\\Features\\WeatherforecastEndpoint.cs",
-              "RelativeToolTip": "GovElec.Api\\Features\\WeatherforecastEndpoint.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwBcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-30T09:45:56.153Z",
+              "DocumentIndex": 7,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Routes.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Routes.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:04:03.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_RedirectToAccessDenied.razor",
+              "DocumentMoniker": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Components\\_RedirectToAccessDenied.razor",
+              "RelativeDocumentMoniker": "GovElec.App\\Components\\Components\\_RedirectToAccessDenied.razor",
+              "ToolTip": "K:\\GitHub Desktop\\GovElec\\GovElec.App\\Components\\Components\\_RedirectToAccessDenied.razor",
+              "RelativeToolTip": "GovElec.App\\Components\\Components\\_RedirectToAccessDenied.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-31T08:03:33.291Z",
               "EditorCaption": ""
             }
           ]

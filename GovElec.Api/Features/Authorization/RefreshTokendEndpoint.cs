@@ -9,7 +9,7 @@ public class RefreshTokendEndpoint : IEndpoint
 {
 	public void MapEndpoint(IEndpointRouteBuilder app)
 	{
-		app.MapPost("api/refresh-token", async ([FromBody]string refreshToken, AppDbContext context, ITokenService tokenService) =>
+		app.MapPost("api/refresh", async ([FromBody]string refreshToken, AppDbContext context, ITokenService tokenService) =>
 		{
 			//var refreshToken = http.Request.Cookies["refreshToken"];
 			//var refreshToken = refreshToken;

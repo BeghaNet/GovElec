@@ -24,8 +24,48 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/AccessDenied.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXEFjY2Vzc0RlbmllZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/EditUser.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXEVkaXRVc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/ListUsers.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExpc3RVc2Vycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExvZ2luLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXExvZ291dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Auth/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBdXRoXFJlZ2lzdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Components/_PersonListitemComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21wb25lbnRzXF9QZXJzb25MaXN0aXRlbUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Components/_RedirectToAccessDenied.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21wb25lbnRzXF9SZWRpcmVjdFRvQWNjZXNzRGVuaWVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Components/_RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21wb25lbnRzXF9SZWRpcmVjdFRvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Components/_UserListitem.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xDb21wb25lbnRzXF9Vc2VyTGlzdGl0ZW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Layout/AppLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcQXBwTGF5b3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/AddUser.razor]
@@ -46,6 +86,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/ReadCookie.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWFkQ29va2llLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [K:/GitHub Desktop/GovElec/GovElec.App/Components/Pages/Weather.razor]

@@ -11,7 +11,7 @@ public class RefreshToken
 	[Required]
 	public string  Username { get; set; }=string.Empty;
 	public DateTime ExpiresUtc { get; set; }
-	public DateTime CreatedUtc { get; set; } = DateTime.UtcNow;
+	public DateTime CreatedUtc { get; set; } = DateTime.Now;
 	public bool Enabled { get; set; }
 
 }

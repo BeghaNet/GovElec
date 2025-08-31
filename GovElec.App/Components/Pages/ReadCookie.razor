@@ -1,0 +1,16 @@
+﻿@page "/readcookie"
+@inject CookieService CookieService
+<h3>ReadCookie</h3>
+
+<p>Cookie Value: @cookieValue</p>
+<br />
+<p>Refresh Token: @refreshToken</p>
+@code {
+     string? cookieValue;
+     string? refreshToken;
+     protected override void OnInitialized()
+     {
+          cookieValue = CookieService.Get("token");
+          refreshToken = CookieService.Get("refreshToken");
+     }
+}

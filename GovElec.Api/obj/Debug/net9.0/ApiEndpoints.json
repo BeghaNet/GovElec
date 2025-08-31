@@ -25,6 +25,34 @@
     ]
   },
   {
+    "ContainingType": "GovElec.Api.Features.Authorization.LogoutEndpoint\u002B\u003C\u003Ec",
+    "Method": "\u003CMapEndpoint\u003Eb__0_0",
+    "RelativePath": "api/logout",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "refreshToken",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ],
+    "Tags": [
+      "Authentication"
+    ],
+    "EndpointName": "Logout",
+    "Description": "Ce endpoint permet de d\u00E9connecter l\u0027utilisateur en supprimant le cookie de rafra\u00EEchissement stock\u00E9 dans le navigateur.",
+    "Summary": "D\u00E9connecte l\u0027utilisateur en supprimant le cookie de rafra\u00EEchissement."
+  },
+  {
     "ContainingType": "GovElec.Api.Features.GetAllPersonsEndpoint\u002B\u003C\u003Ec",
     "Method": "\u003CMapEndpoint\u003Eb__0_0",
     "RelativePath": "api/persons",
@@ -166,11 +194,17 @@
   {
     "ContainingType": "GovElec.Api.Features.Authorization.RefreshTokendEndpoint\u002B\u003C\u003Ec",
     "Method": "\u003CMapEndpoint\u003Eb__0_0",
-    "RelativePath": "api/refresh-token",
+    "RelativePath": "api/refresh",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "refreshToken",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
         "Type": "System.Void",

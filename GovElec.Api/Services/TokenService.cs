@@ -31,9 +31,9 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
     {
           var user = await context.Users.FirstOrDefaultAsync(u => u.UserName == username);
           if (user == null)
-            return (new("Erreur",string.Empty, DateTime.UtcNow));
+            return (new("Erreur",string.Empty, DateTime.Now));
 
-        var now = DateTime.UtcNow;
+        var now = DateTime.Now;
         var expires = now.Add(lifetime ?? TimeSpan.FromHours(2));
 
         var secretInKey = configuration["Jwt:SigninKey"!];
@@ -60,6 +60,7 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
             claims: claims,
             notBefore: now,
             expires: expires,
+            
             signingCredentials: credentials
         );
 
@@ -98,7 +99,7 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
      public async Task<bool> IsValidTokenIsValid(string token)
      {
           var result=await context.RefreshTokens.FirstOrDefaultAsync(t => t.Token == token && t.Enabled);
-		if (result == null || result.ExpiresUtc < DateTime.UtcNow|| result.Enabled==false)
+		if (result == null || result.ExpiresUtc < DateTime.Now || result.Enabled==false)
 			return false;
 		return true;
 	}
@@ -139,7 +140,7 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
      public async Task<bool> IsRefreshTokenValidAsync(string refreshToken)
      {
 		var token = await context.RefreshTokens.FirstOrDefaultAsync(t => t.Token == refreshToken && t.Enabled);
-		if (token == null || token.ExpiresUtc < DateTime.UtcNow)
+		if (token == null || token.ExpiresUtc < DateTime.Now)
 			return false;
 		return true;
 	}

@@ -1,0 +1,51 @@
+﻿@page "/login"
+@layout AppLayout
+
+@inject HttpClient HttpClient
+@inject AuthService AuthService
+@inject NavigationManager Nav
+
+<div class="container">
+     <h3>Login</h3>
+     <br/>
+     <EditForm Model="Model" OnValidSubmit="OnSubmitAsync" FormName="LoginForm">
+          <DataAnnotationsValidator />
+          <ValidationSummary />
+          <div class="form-group">
+               <label for="username">Username</label>
+               <InputText id="username" class="form-control" @bind-Value="Model.Username" />
+          </div>
+          <div class="form-group">
+               <label for="password">Password</label>
+               <InputText id="password" type="password" class="form-control" @bind-Value="Model.Password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+     </EditForm>
+</div>
+<br />
+<p>Connecté: @result</p>
+<p></p>
+
+
+@code {
+     [SupplyParameterFromForm] 
+     public LoginDto Model { get; set; } = new LoginDto();
+     private bool result;
+     private string Token = string.Empty;
+     private async Task OnSubmitAsync()
+     {
+          result = await AuthService.Login(Model.Username, Model.Password );
+          if (result)
+          {
+               //Token = await AuthService.GetToken();
+               //HttpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
+               Nav.NavigateTo("/");
+
+          }
+          else
+          {
+               Nav.NavigateTo("/accessdenied");
+          }
+          ;
+    }
+}

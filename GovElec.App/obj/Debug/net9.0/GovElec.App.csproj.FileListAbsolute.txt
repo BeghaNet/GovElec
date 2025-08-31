@@ -166,3 +166,12 @@ K:\GitHub Desktop\GovElec\GovElec.App\obj\Debug\net9.0\refint\GovElec.App.dll
 K:\GitHub Desktop\GovElec\GovElec.App\obj\Debug\net9.0\GovElec.App.pdb
 K:\GitHub Desktop\GovElec\GovElec.App\obj\Debug\net9.0\GovElec.App.genruntimeconfig.cache
 K:\GitHub Desktop\GovElec\GovElec.App\obj\Debug\net9.0\ref\GovElec.App.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Newtonsoft.Json.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+K:\GitHub Desktop\GovElec\GovElec.App\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

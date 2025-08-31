@@ -183,6 +183,8 @@ public static class ServicesExtension
 			// Example: a policy based on Role
 			options.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
 		});
+
+		
 		return services;
 	}
 
