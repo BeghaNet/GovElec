@@ -82,6 +82,9 @@ namespace GovElec.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
                     b.Property<float>("Ks")
                         .HasColumnType("REAL");
 
@@ -103,11 +106,11 @@ namespace GovElec.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("StatusTechnicien")
+                    b.Property<string>("Statut")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Statut")
+                    b.Property<string>("StatutTechnicien")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

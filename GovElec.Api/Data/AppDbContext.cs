@@ -6,7 +6,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
 {
     public DbSet<Models.Demande> Demandes { get; set; } = null!;
     public DbSet<Models.User> Users { get; set; } = null!;
-     public DbSet<Models.RefreshToken> RefreshTokens { get; set; } = null!;
+    public DbSet<Models.RefreshToken> RefreshTokens { get; set; } = null!;
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

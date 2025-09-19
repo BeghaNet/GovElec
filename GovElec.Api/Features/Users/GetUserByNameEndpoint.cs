@@ -17,7 +17,7 @@ public class GetUserByNameEndpoint : IEndpoint
             var response = user.Adapt<UserForReadResponse>();
             return Results.Ok(response);
         }).RequireAuthorization("SelfOrAdmin") // Only Admins or the user themselves can get user by name
-		.WithTags("Users")
+		    .WithTags("Users")
           .Produces<User>(StatusCodes.Status200OK)
           .Produces(StatusCodes.Status404NotFound)
           .WithName("GetUserByName")
