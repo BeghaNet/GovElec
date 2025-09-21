@@ -31,3 +31,4 @@ GovElec.Api/obj/Debug/net9.0/GovElec.Api.AssemblyInfo.cs
 /GovElec.Api/Data/Migrations
 /GovElec.Api/obj
 /GovElec.Api/bin
+GovElec.Api/Data/GovElecDb.db
