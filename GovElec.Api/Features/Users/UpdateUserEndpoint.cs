@@ -9,6 +9,7 @@ public class UpdateUserEndpoint : IEndpoint
     {
         app.MapPut("/api/users/update/{id:guid}", async (Guid id, UserForUpdateCommand command, AppDbContext dbContext,IPasswordService passwordService) =>
         {
+
             var user = await dbContext.Users.FindAsync(id);
             if (user == null)
             {
@@ -16,12 +17,12 @@ public class UpdateUserEndpoint : IEndpoint
             }
 
             // Update user details : Ne pas utiliser Mapster car si le Password est vide, mapster va écraser le mot de passe existant
-            user.UserName = command.UserName;
+            user.UserName = command.UserName.ToUpper();
             user.FullName = command.FullName;
             user.Equipe = command.Equipe;
             user.Email = command.Email;
             user.Phone = command.Phone;
-            user.Role = UserRole.User;
+            user.Role = command.Role;
             user.IsDeleted = command.IsDeleted;
             dbContext.Update(user);
             await dbContext.SaveChangesAsync();
@@ -36,10 +37,14 @@ public class UpdateUserEndpoint : IEndpoint
             
             var response= user.Adapt<UserForReadResponse>();
             return Results.Ok(response);
-        }).WithTags("Users")
-          .Produces<User>(StatusCodes.Status200OK)
+        }).RequireAuthorization("SelfOrAdmin") // Only Admins or the user themselves can update user
+		.WithTags("Users")
+          .RequireAuthorization()
+		.Produces<User>(StatusCodes.Status200OK)
           .Produces(StatusCodes.Status404NotFound)
-          .WithName("UpdateUser")
+		.Produces(StatusCodes.Status400BadRequest)
+          .Produces(StatusCodes.Status401Unauthorized)
+		.WithName("UpdateUser")
           .WithSummary("Met à jour les détails d'un utilisateur existant.")
           .WithDescription("This endpoint allows you to update the details of an existing user by providing the user's ID and the new details.");
     }

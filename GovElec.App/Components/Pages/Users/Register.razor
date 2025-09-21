@@ -1,0 +1,22 @@
+﻿@page "/register"
+@page "/edituser/{username}"
+<h3>@tiltle</h3>
+<p>TODO</p>
+@code {
+     [Parameter]
+     public string? username { get; set; }
+     string tiltle = "Register";
+
+     protected override void OnParametersSet()
+     {
+          //return base.OnParametersSetAsync();
+          if (!string.IsNullOrEmpty(username))
+          {
+               tiltle = $"Edit User: {username}";
+          }
+          else
+          {
+               tiltle = "Register";
+          }
+     }
+}

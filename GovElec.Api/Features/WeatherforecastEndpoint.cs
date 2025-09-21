@@ -21,7 +21,8 @@ public class WeatherforecastEndpoint : IEndpoint
                 .ToArray();
             return forecast;
         })
-        .WithTags("Tests")
+        .RequireAuthorization()
+	   .WithTags("Tests")
         .WithName("WeatherForecast")
         .WithSummary("Renvoie une liste de températures aléatoires.")
         .WithDescription("Ce endpoint renvoie une liste de températures aléatoires afin de tester la communication avec l'Api.");

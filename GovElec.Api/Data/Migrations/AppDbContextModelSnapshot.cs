@@ -82,6 +82,9 @@ namespace GovElec.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
                     b.Property<float>("Ks")
                         .HasColumnType("REAL");
 
@@ -103,11 +106,11 @@ namespace GovElec.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("StatusTechnicien")
+                    b.Property<string>("Statut")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Statut")
+                    b.Property<string>("StatutTechnicien")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -137,6 +140,30 @@ namespace GovElec.Api.Data.Migrations
                     b.HasIndex("TechnicienId");
 
                     b.ToTable("Demandes");
+                });
+
+            modelBuilder.Entity("GovElec.Api.Models.RefreshToken", b =>
+                {
+                    b.Property<string>("Token")
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreatedUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("ExpiresUtc")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Token");
+
+                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("GovElec.Api.Models.User", b =>
@@ -178,8 +205,9 @@ namespace GovElec.Api.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("UserName")
                         .IsRequired()

@@ -24,6 +24,12 @@ public class DemandForCreateCommand
 public class DemandForUpdateCommand
 {
     public int Id { get; set; }
+    //Ces champs ne seront remplis que si le rôle de l'utilisateur est SuperAdministrateur
+    //Si le rôle est Administrateur, seul les champs Projet et bâtiments pourront être modifié.
+    public string Projet { get; set; } = string.Empty;
+    public Guid DemandeurId { get; set; }
+    public string Batiment { get; set; } = string.Empty;
+    // Fin de limitations
     public string TypeDemande { get; set; } = string.Empty;
     public string Priorite { get; set; } = string.Empty;
     public string Contexte { get; set; } = string.Empty;
@@ -39,9 +45,18 @@ public class DemandForUpdateCommand
     public float Ku { get; set; } = 1f;
     public string Statut { get; set; } = "Nouvelle demande";
     public string StatusTechnicien { get; set; } = "Nouvelle demande";
+    public Guid TechnicienId { get; set; }
+    //public Guid UserId { get; set; } //Attention : Doit-être l'utilisateur connecté pas le demandeur qui doit rester fixe.
     public string CommentaireUtilisateur { get; set; } = string.Empty;
     public string CommentaireTechnicien { get; set; } = string.Empty;
     public string CommentaireAdministrateur { get; set; } = string.Empty;
+    //Dates
+    //Date de soumission au service électrique. La réponse sera calculée lors de la soumission
+    public DateTime DateSoumission { get; set; }
+    //Date de réponse du service électrique
+    public DateTime DateReponse { get; set; }
+    //Date de réponse de la gouvernance
+    public DateTime DateReponseFinale { get; set; }
 }
 public class DemandForDeleteCommand
 {
@@ -50,11 +65,14 @@ public class DemandForDeleteCommand
 
 public class DemandeForReadRequest
 {
-    //En fonction de la requête, on renverra une liste ou une fiche
-    //Si la requête se fait sur l'Id, on renvoie une seule fiche
+    
+    //Si la requete se fait sur le user, on renvoie toutes les fiches du user
     //Si la requête est un nom de projet, on renvoie toutes les fiches liées au projet
-    public int Id { get; set; } = -1;
-    public string Projet { get; set; } = string.Empty;
+    //Si GetAll reste sur false, on ne renvoie que les fiches en cours, sinon on renvoie tout l'historique
+    public string Username { get; set; } = string.Empty;
+    public string Project { get; set; } = string.Empty;
+    public bool GetAll { get; set; } = false;
+   
 }
 public class DemandeForHistoryRequest
 {
@@ -65,6 +83,7 @@ public class DemandeForReadResponse
     public int Id { get; set; }
     public string Projet { get; set; } = string.Empty;
     public string Demandeur { get; set; } = string.Empty;
+    public string Equipe { get; set; } = string.Empty;
     public string Batiment { get; set; } = string.Empty;
 
     public string TypeDemande { get; set; } = string.Empty;
@@ -86,22 +105,21 @@ public class DemandeForReadResponse
     public string CommentaireUtilisateur { get; set; } = string.Empty;
     public string CommentaireTechnicien { get; set; } = string.Empty;
     public string CommentaireAdministrateur { get; set; } = string.Empty;
-    public DateOnly DateDemande { get; set; }
-    public DateOnly DateReponseAttendue { get; set; }
+    public DateTime DateCreation { get; set; }
+    public DateTime DateReponseAttendue { get; set; }
 }
 
 public class DemandForListResponse
 {
     public int Id { get; set; }
     public string Demandeur { get; set; } = string.Empty;
-    public string Equipe { get; set; } = string.Empty;
     public string Projet { get; set; } = string.Empty;
     public string Batiment { get; set; } = string.Empty;
     public string Priorite { get; set; } = "Basse";
     public string Status { get; set; } = "Nouvelle demande";
     public string StatusTechnicien { get; set; } = "Nouvelle demande";
-    public DateOnly DateDemande { get; set; }
-    public DateOnly DateReponseAttendue { get; set; }
+    public DateTime DateCreation { get; set; }
+    public DateTime DateReponseAttendue { get; set; }
 }
 
 public class DemandForHistoryResponse
@@ -111,7 +129,7 @@ public class DemandForHistoryResponse
     public string Demandeur { get; set; } = string.Empty;
     public string Batiment { get; set; } = string.Empty;
     public DateTime DateCreation { get; set; } = DateTime.Now;
-    public DateTime DateDemandeApprobation { get; set; }
+    public DateTime DateCreationApprobation { get; set; }
     public DateTime DateReponseAttendue { get; set; }
     public DateTime DateReponse { get; set; }
     public DateTime DateReponseFinale { get; set; }

@@ -9,14 +9,15 @@ public class GetUserByNameEndpoint : IEndpoint
     {
         app.MapGet("/api/users/byname/{username}", async (string username, AppDbContext dbContext) =>
         {
-            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.UserName == username);
+            var user = await dbContext.Users.FirstOrDefaultAsync(u => u.UserName.ToUpper() == username.ToUpper());
             if (user == null)
             {
                 return Results.NotFound("Utilisateur non trouvé.");
             }
             var response = user.Adapt<UserForReadResponse>();
             return Results.Ok(response);
-        }).WithTags("Users")
+        }).RequireAuthorization("SelfOrAdmin") // Only Admins or the user themselves can get user by name
+		    .WithTags("Users")
           .Produces<User>(StatusCodes.Status200OK)
           .Produces(StatusCodes.Status404NotFound)
           .WithName("GetUserByName")

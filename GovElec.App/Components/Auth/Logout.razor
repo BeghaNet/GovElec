@@ -1,0 +1,16 @@
+﻿@page "/logout"
+@inject NavigationManager Nav
+@inject AuthService AuthService
+<div>
+    <form>
+          <h4>Vous-êtes déconnecté</h4>
+          <a href="/">Retour à l'accueil</a>
+    </form>
+</div>
+@code {
+     protected override async Task OnInitializedAsync()
+     {
+          await AuthService.Logout();
+          //Nav.NavigateTo("/");
+     }
+}

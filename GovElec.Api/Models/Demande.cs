@@ -10,7 +10,7 @@ public class Demande
     public string Batiment { get; set; } = string.Empty;
     //Entête Status
     public string Statut { get; set; } = string.Empty;
-    public string StatusTechnicien { get; set; } = string.Empty;
+    public string StatutTechnicien { get; set; } = string.Empty;
     //Corps : données techniques
     public string Equipement { get; set; } = string.Empty;
     public string TypeDemande { get; set; } = string.Empty;
@@ -42,7 +42,8 @@ public class Demande
     public DateTime DateDebutTravaux { get; set; }
     public DateTime DateCloture { get; set; }
 
+    public bool IsDeleted { get; set; } = false;
     //Les liens
-    public User Demandeur { get; set; }=new User();
+    public User Demandeur { get; set; } = new User();
     public User Technicien { get; set; }= new User();
 }

@@ -5,6 +5,7 @@ C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\Gov
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.AssemblyInfoInputs.cache
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.AssemblyInfo.cs
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.csproj.CoreCompileInputs.cache
+C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.sourcelink.json
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.dll
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\refint\GovElec.Shared.dll
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.pdb

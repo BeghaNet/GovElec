@@ -29,7 +29,8 @@ public class DeleteUserEndpoint : IEndpoint
 
             return Results.Ok("Utilisateur supprimé avec succès.");
         })
-        .WithTags("Users")
+          .RequireAuthorization("AdminOnly") // Only Admins can delete users
+	   .WithTags("Users")
         .Produces(StatusCodes.Status200OK)
         .Produces(StatusCodes.Status404NotFound)
         .WithName("DeleteUser")

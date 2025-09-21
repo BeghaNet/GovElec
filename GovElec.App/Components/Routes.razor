@@ -1,6 +1,32 @@
-﻿<Router AppAssembly="typeof(Program).Assembly">
+﻿<CascadingAuthenticationState>
+
+<Router AppAssembly="typeof(Program).Assembly">
     <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)">
+            <NotAuthorized Context="_">
+                    <!-- Si l'utilisateur est connecté => AccessDenied, sinon => Login -->
+                    <AuthorizeView Context="auth">
+                        <Authorized>
+                            <_RedirectToAccessDenied />
+                        </Authorized>
+                        <NotAuthorized>
+                            <_RedirectToLogin />
+                        </NotAuthorized>
+                    </AuthorizeView>
+                </NotAuthorized>
+                <Authorizing>
+                    <p>Vérification de l’authentification…</p>
+                </Authorizing>
+        </AuthorizeRouteView>
+        
+        
+        
+        
+        
+        
+        
+        @* <FocusOnNavigate RouteData="routeData" Selector="h1" /> *@
     </Found>
 </Router>
+
+</CascadingAuthenticationState>

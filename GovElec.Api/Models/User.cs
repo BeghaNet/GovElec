@@ -11,7 +11,7 @@ public class User
     public string Phone { get; set; } = string.Empty;
     public byte[] PasswordHash { get; set; } = Array.Empty<byte>();
         public byte[] PasswordSalt { get; set; } = Array.Empty<byte>();
-    public UserRole Role { get; set; } = UserRole.User; // Default role
+    public string Role { get; set; } ="User"; // Default role
     public bool IsDeleted { get; set; } = false;
     //Configuration pour le password
     public int PasswordIterations { get; set; }

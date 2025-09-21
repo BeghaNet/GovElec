@@ -1,12 +1,14 @@
 ﻿@page "/"
+
+
 @inject HttpClient Http
+
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 <br/>
-<p>@apiUrl</p>
-<br/>
+<AuthorizeView >
 @if(persons.Count==0){
     <p>Loading...</p>
 }
@@ -18,13 +20,14 @@ else{
         }
     </div>
 }
+</AuthorizeView>
 
 <div><a href="/persons/create" class="btn btn-success">Ajouter</a></div>
 
 
 @code{
     List<Person> persons = new();
-    string? apiUrl = "api/persons";
+    
 
     protected override async Task OnInitializedAsync()
     {

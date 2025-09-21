@@ -9,7 +9,9 @@ public static class ApplicationExtension
         app.UseHttpsRedirection();
         app.UseRouting();
         app.MapEndpoints();
-        app.MapOpenApi();
+		app.UseAuthentication();
+		app.UseAuthorization();
+		app.MapOpenApi();
         app.MapDocumentation();
         app.UseCors();
         return app;

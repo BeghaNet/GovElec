@@ -1,4 +1,5 @@
 using GovElec.App.Components;
+using GovElec.App.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,8 +18,12 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-
 app.UseAntiforgery();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
