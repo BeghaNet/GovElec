@@ -13,8 +13,7 @@ public class CreateDemandEndpoint:IEndpoint
 		   var validationResult = await validator.ValidateAsync(command);
 		   if (!validationResult.IsValid)
 		   {
-			   var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
-			   return Results.BadRequest(new { Errors = errors });
+			   return Results.ValidationProblem(validationResult.ToDictionary());
 		   }
 		   var demand = command.Adapt<Demande>();
             if (demand == null)

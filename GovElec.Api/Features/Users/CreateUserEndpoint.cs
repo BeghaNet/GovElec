@@ -20,8 +20,7 @@ public class CreateUserEndpoint : IEndpoint
 		   var validationResult = await validator.ValidateAsync(command);
 		   if (!validationResult.IsValid)
 		   {
-			   var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
-			   return Results.BadRequest(new { Errors = errors });
+			   return Results.ValidationProblem(validationResult.ToDictionary());
 		   }
 		   // Map the command to a User entity
 		   var user = command.Adapt<User>();

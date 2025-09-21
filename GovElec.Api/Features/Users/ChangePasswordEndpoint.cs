@@ -14,8 +14,7 @@ public class ChangePasswordEndpoint : IEndpoint
 			var validationResult = await validator.ValidateAsync(command);
 			if (!validationResult.IsValid)
 			{
-				var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
-				return Results.BadRequest(new { Errors = errors });
+				return Results.ValidationProblem(validationResult.ToDictionary());
 			}
 			//var passwordVerified = await passwordService.VerifyAsync(command.UserName, command.OldPassword);
 			//if (!passwordVerified)

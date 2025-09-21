@@ -15,8 +15,9 @@ public class UpdateDemandEndpoint : IEndpoint
              var validationResult = await validator.ValidateAsync(command);
 		   if (!validationResult.IsValid)
 		   {
-			   var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
-			   return Results.BadRequest(new { Errors = errors });
+			   //var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
+			   //return Results.BadRequest(new { Errors = errors });
+			   return Results.ValidationProblem(validationResult.ToDictionary());
 		   }
 		   if (id != command.Id)
 		   {
@@ -40,7 +41,7 @@ public class UpdateDemandEndpoint : IEndpoint
             // - un technicien ne peux éditer que les champs de But
             var utilisateur = http.User.Identity?.Name;
             //var role = http.User.Claims.FirstOrDefault(c => c.Type == "role")?.Value;
-            var utilisateurForControle = await context.Users.FirstAsync(u => u.UserName.ToUpper() == utilisateur.ToUpper());
+            var utilisateurForControle = await context.Users.FirstAsync(u => u.UserName.ToUpper() == utilisateur!.ToUpper());
             var role = utilisateurForControle.Role;
             var CanEdit = role == "Admin" ||
                             role == "SuperAdmin"||
