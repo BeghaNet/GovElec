@@ -1,12 +1,14 @@
 public class DemandForCreateCommand
 {
-    //Entête : ne pourra plus être modifiée.
-    public string Projet { get; set; } = string.Empty;
+	private string _projet = string.Empty;
+	private string _batiment = string.Empty;
+	//Entête : ne pourra plus être modifiée.
+	public string Projet { get=>_projet; set=>_projet=value.ToUpper(); }
     public Guid Demandeur { get; set; }
-    public string Batiment { get; set; } = string.Empty;
+    public string Batiment { get => _batiment; set => _batiment = value.ToUpper(); }
 
-    //Corps : données techniques
-    public string Equipement { get; set; } = string.Empty;
+	//Corps : données techniques
+	public string Equipement { get; set; } = string.Empty;
     public string TypeDemande { get; set; } = "Nouvelle demande";
     public string Priorite { get; set; } = string.Empty;
     public string Contexte { get; set; } = string.Empty;
@@ -23,14 +25,17 @@ public class DemandForCreateCommand
 }
 public class DemandForUpdateCommand
 {
-    public int Id { get; set; }
-    //Ces champs ne seront remplis que si le rôle de l'utilisateur est SuperAdministrateur
-    //Si le rôle est Administrateur, seul les champs Projet et bâtiments pourront être modifié.
-    public string Projet { get; set; } = string.Empty;
-    public Guid DemandeurId { get; set; }
-    public string Batiment { get; set; } = string.Empty;
-    // Fin de limitations
-    public string TypeDemande { get; set; } = string.Empty;
+	private string _projet = string.Empty;
+	private string _batiment = string.Empty;
+	public int Id { get; set; }
+	//Ces champs ne seront remplis que si le rôle de l'utilisateur est SuperAdministrateur
+	//Si le rôle est Administrateur, seul les champs Projet et bâtiments pourront être modifié.
+	public string Projet { get => _projet; set => _projet = value.ToUpper(); }
+	public Guid DemandeurId { get; set; }
+	public string Batiment { get => _batiment; set => _batiment = value.ToUpper(); }
+	public string Equipement { get; set; } = string.Empty;
+	// Fin de limitations
+	public string TypeDemande { get; set; } = string.Empty;
     public string Priorite { get; set; } = string.Empty;
     public string Contexte { get; set; } = string.Empty;
     public string VenantDe { get; set; } = string.Empty;

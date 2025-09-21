@@ -8,6 +8,9 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Options;
 using System.Security.Cryptography;
+using FluentValidation;
+using GovElec.Api.Validations.Users;
+using GovElec.Api.Validations.Demands;
 namespace GovElec.Api.Extension;
 
 public static class ServicesExtension
@@ -25,9 +28,8 @@ public static class ServicesExtension
 		services.AddApiEndpoints(typeof(Program).Assembly);
 		services.AddScoped<ITokenService, TokenService>();
 		services.AddAppDbContext(configuration);
-		//services.AddSecurity(configuration);
+		services.AddValidation();
 		services.AddSecurity();
-		//services.Configure<TokenOptions>(configuration.GetSection("Jwt"));
 		services.AddOptions<TokenOptions>()
 			.Bind(configuration.GetSection("Jwt"))
 			.Validate(o => !string.IsNullOrWhiteSpace(o.Issuer), "Jwt:Issuer missing")
@@ -35,22 +37,21 @@ public static class ServicesExtension
 			.Validate(o => !string.IsNullOrWhiteSpace(o.SignInKey), "Jwt:SigninKey missing")
 			.ValidateOnStart();
 		services.AddCorsService();
-
 		services.AddDocumentation();
-		//builder.Services.AddControllers();
-
-		services.AddScoped<IPersonService, PersonService>();
 		services.AddScoped<IPasswordService, PasswordService>();
 		ConfigureMapster();
+
+		//Devra disparaitre : Ne sert que pour les tests
+		services.AddScoped<IPersonService, PersonService>();
 		return services;
 	}
 
 	/// <summary>
-	/// Adds API endpoints from the specified assembly to the service collection.
+	/// Recherches et ajoute les Endpoints dans la collection de services.
 	/// </summary>
-	/// <param name="services">The service collection to add endpoints to.</param>
-	/// <param name="assembly">The assembly containing the endpoint definitions.</param>
-	/// <returns>The updated service collection.</returns>
+	/// <param name="services">La collection de service à laquelle ajouter les endpoints.</param>
+	/// <param name="assembly">L'assembly qui contient les endpoints à ajouter.</param>
+	/// <returns>La collection de service mise à jour.</returns>
 	private static IServiceCollection AddApiEndpoints(this IServiceCollection services, Assembly assembly)
 	{
 		ServiceDescriptor[] serviceDescriptors = assembly
@@ -62,6 +63,11 @@ public static class ServicesExtension
 		services.TryAddEnumerable(serviceDescriptors);
 		return services;
 	}
+	/// <summary>
+	/// Ajoute la documentation Swagger / OpenApi
+	/// </summary>
+	/// <param name="services"></param>
+	/// <returns>La collection de services mise à jours.</returns>
 	private static IServiceCollection AddDocumentation(this IServiceCollection services)
 	{
 		services.AddOpenApi();
@@ -96,13 +102,23 @@ public static class ServicesExtension
 
 		return services;
 	}
-
+	/// <summary>
+	/// Ajoute le DbContext de l'application
+	/// </summary>
+	/// <param name="services"></param>
+	/// <param name="configuration"></param>
+	/// <returns></returns>
 	private static IServiceCollection AddAppDbContext(this IServiceCollection services, IConfiguration configuration)
 	{
 		services.AddDbContext<AppDbContext>(options => options.UseSqlite(configuration.GetConnectionString("SQLiteConnection")));
 		return services;
 	}
 
+	/// <summary>
+	/// Ajoute le service CORS
+	/// </summary>
+	/// <param name="services"></param>
+	/// <returns></returns>
 	private static IServiceCollection AddCorsService(this IServiceCollection services)
 	{
 		services.AddCors(options =>
@@ -117,6 +133,12 @@ public static class ServicesExtension
 		});
 		return services;
 	}
+	/// <summary>
+	/// Ajoute la sécurité (Authentication + Authorization)
+	/// </summary>
+	/// <param name="services"></param>
+	/// <returns></returns>
+	/// <exception cref="InvalidOperationException"></exception>
 	private static IServiceCollection AddSecurity(this IServiceCollection services)
 	{
 		static byte[] GetKeyBytes(TokenOptions o)
@@ -217,25 +239,41 @@ public static class ServicesExtension
 
 		return services;
 	}
-
+	/// <summary>
+	/// Ajoute les validateurs FluentValidation
+	/// </summary>
+	/// <param name="services"></param>
+	/// <returns></returns>
+	private static IServiceCollection AddValidation(this IServiceCollection services)
+	{
+		services.AddScoped<IValidator<UserForCreateCommand>, CreateUserValidator>();
+		services.AddScoped<IValidator<UserForUpdateCommand>, UpdateUserValidator>();
+		services.AddScoped<IValidator<ChangePasswordCommand>, ChangePasswordValidator>();
+		services.AddScoped<IValidator<DemandForCreateCommand>, CreateDemandValidator>();
+		services.AddScoped<IValidator<DemandForUpdateCommand>, UpdateDemandValidator>();
+		return services;
+	}
+	/// <summary>
+	/// Configure Mapster pour les conversions spécifiques
+	/// </summary>
 	private static void ConfigureMapster()
 	{
 		TypeAdapterConfig<DateTime, DateOnly>
-    .NewConfig()
-    .MapWith(src => DateOnly.FromDateTime(src));
+		    .NewConfig()
+		    .MapWith(src => DateOnly.FromDateTime(src));
 
-TypeAdapterConfig<DateTime?, DateOnly?>
-    .NewConfig()
-    .MapWith(src => src.HasValue ? DateOnly.FromDateTime(src.Value) : (DateOnly?)null);
+		TypeAdapterConfig<DateTime?, DateOnly?>
+		    .NewConfig()
+		    .MapWith(src => src.HasValue ? DateOnly.FromDateTime(src.Value) : (DateOnly?)null);
 
-// (optionnel, sens inverse)
-TypeAdapterConfig<DateOnly, DateTime>
-    .NewConfig()
-    .MapWith(src => src.ToDateTime(TimeOnly.MinValue));
+		// (optionnel, sens inverse)
+		TypeAdapterConfig<DateOnly, DateTime>
+		    .NewConfig()
+		    .MapWith(src => src.ToDateTime(TimeOnly.MinValue));
 
-TypeAdapterConfig<DateOnly?, DateTime?>
-    .NewConfig()
-    .MapWith(src => src.HasValue ? src.Value.ToDateTime(TimeOnly.MinValue) : (DateTime?)null);
+		TypeAdapterConfig<DateOnly?, DateTime?>
+		    .NewConfig()
+		    .MapWith(src => src.HasValue ? src.Value.ToDateTime(TimeOnly.MinValue) : (DateTime?)null);
 	}
 
 }

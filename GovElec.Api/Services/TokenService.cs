@@ -29,7 +29,7 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
 {
     public async Task< (string token,string refreshToken, DateTime expiresUtc)> CreateTokenAsync(string username, TimeSpan? lifetime = null)
     {
-          var user = await context.Users.FirstOrDefaultAsync(u => u.UserName == username);
+          var user = await context.Users.FirstOrDefaultAsync(u => u.UserName.ToUpper() == username.ToUpper());
           if (user == null)
             return (new("Erreur",string.Empty, DateTime.Now));
 
@@ -44,7 +44,7 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
         
         var claims = new[]
         {
-            new Claim(ClaimTypes.Name, user.UserName),
+            new Claim(ClaimTypes.Name, user.UserName.ToUpper()),
             new Claim(ClaimTypes.GivenName,$"{user!.FullName}"),
             new Claim(ClaimTypes.Role, $"{user.Role}"),
             new Claim("Team",$"{user.Equipe}"),
@@ -69,7 +69,7 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
 		var refreshTokenEntity = new Models.RefreshToken
 		{
 			Token = refreshToken,
-			Username = user.UserName,
+			Username = user.UserName.ToUpper(),
 			ExpiresUtc = now.AddDays(7),
 			Enabled = true
 		};
@@ -81,9 +81,9 @@ public class TokenService(AppDbContext context, IConfiguration configuration) : 
     }
      public async Task RemoveTokensForUser(string username)
      {
-		if (await UserExists(username))
+		if (await UserExists(username.ToUpper()))
 		{
-			var existingTokens = context.RefreshTokens.Where(t => t.Username == username && t.Enabled);
+			var existingTokens = context.RefreshTokens.Where(t => t.Username == username.ToUpper() && t.Enabled);
 			context.RefreshTokens.RemoveRange(existingTokens);
 		}
 	}

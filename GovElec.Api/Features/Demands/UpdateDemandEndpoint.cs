@@ -5,10 +5,24 @@ public class UpdateDemandEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPut("/api/demands/{id:int}", async (int id, DemandForUpdateCommand command, HttpContext http, AppDbContext context) =>
+        app.MapPut("/api/demands/{id:int}", async (
+             int id, 
+             DemandForUpdateCommand command, 
+             HttpContext http, 
+             AppDbContext context,
+             IValidator<DemandForUpdateCommand>validator) =>
         {
-
-            var demand = await context.Demandes.FindAsync(id);
+             var validationResult = await validator.ValidateAsync(command);
+		   if (!validationResult.IsValid)
+		   {
+			   var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
+			   return Results.BadRequest(new { Errors = errors });
+		   }
+		   if (id != command.Id)
+		   {
+			   return Results.BadRequest("L'ID de la demande dans l'URL ne correspond pas à celui du corps de la requête.");
+		   }
+		   var demand = await context.Demandes.FindAsync(id);
             if (demand == null)
             {
                 return Results.NotFound($"La demande avec l'ID {id} n'a pas été trouvée.");

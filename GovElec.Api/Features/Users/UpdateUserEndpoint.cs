@@ -7,10 +7,26 @@ public class UpdateUserEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPut("/api/users/update/{id:guid}", async (Guid id, UserForUpdateCommand command, AppDbContext dbContext,IPasswordService passwordService) =>
-        {
+        app.MapPut("/api/users/update/{id:guid}", async 
+             (
+               Guid id, 
+               UserForUpdateCommand command, 
+               AppDbContext dbContext,
+               IValidator<UserForUpdateCommand> validator
+               ) =>
+	   {
+		   //     Ces deux lignes on été retirées du constructeur car on n'utilise plus 
+		   //le changement de mot de passe dans ce endpoint
+		   //          ,
+		   //IPasswordService passwordService
+		   var validationResult = await validator.ValidateAsync(command);
+		   if (!validationResult.IsValid)
+		   {
+			   var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
+			   return Results.BadRequest(new { Errors = errors });
+		   }
 
-            var user = await dbContext.Users.FindAsync(id);
+		   var user = await dbContext.Users.FindAsync(id);
             if (user == null)
             {
                 return Results.NotFound("Utilisateur non trouvé.");
@@ -26,16 +42,17 @@ public class UpdateUserEndpoint : IEndpoint
             user.IsDeleted = command.IsDeleted;
             dbContext.Update(user);
             await dbContext.SaveChangesAsync();
-            if (!string.IsNullOrEmpty(command.OldPassword))
-            {
-                var passwordVerified = await passwordService.VerifyAsync(command.UserName, command.OldPassword);
-                if (passwordVerified)
-                    if (string.IsNullOrEmpty(command.Password) || string.IsNullOrEmpty(command.ConfirmPassword) || command.Password != command.ConfirmPassword)
-                        return Results.BadRequest("Mot de passe manquant ou ne correspondent pas.");
-                await passwordService.CreateAsync(command.UserName, command.Password);
-            }
-            
-            var response= user.Adapt<UserForReadResponse>();
+		   //Le changement de mot de passe est géré dans un endpoint séparé
+		   //if (!string.IsNullOrEmpty(command.OldPassword))
+		   //{
+		   //    var passwordVerified = await passwordService.VerifyAsync(command.UserName, command.OldPassword);
+		   //    if (passwordVerified)
+		   //        if (string.IsNullOrEmpty(command.Password) || string.IsNullOrEmpty(command.ConfirmPassword) || command.Password != command.ConfirmPassword)
+		   //            return Results.BadRequest("Mot de passe manquant ou ne correspondent pas.");
+		   //    await passwordService.CreateAsync(command.UserName, command.Password);
+		   //}
+
+		   var response = user.Adapt<UserForReadResponse>();
             return Results.Ok(response);
         }).RequireAuthorization("SelfOrAdmin") // Only Admins or the user themselves can update user
 		.WithTags("Users")

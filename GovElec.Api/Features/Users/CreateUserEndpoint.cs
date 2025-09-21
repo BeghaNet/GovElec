@@ -1,15 +1,30 @@
 
 
 
+using FluentValidation;
+
 namespace GovElec.Api.Features.Users;
 
 public class CreateUserEndpoint : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPost("/api/users/create", async (UserForCreateCommand command, AppDbContext dbContext,IPasswordService passwordService) =>
+        app.MapPost("/api/users/create", async 
+             (
+               UserForCreateCommand command, 
+               AppDbContext dbContext,
+               IPasswordService passwordService,
+               IValidator<UserForCreateCommand> validator
+		   ) =>
         {
-            var user = command.Adapt<User>();
+		   var validationResult = await validator.ValidateAsync(command);
+		   if (!validationResult.IsValid)
+		   {
+			   var errors = validationResult.Errors.Select(e => e.ErrorMessage).ToList();
+			   return Results.BadRequest(new { Errors = errors });
+		   }
+		   // Map the command to a User entity
+		   var user = command.Adapt<User>();
              user.UserName = user.UserName.ToUpper();
 		   if (user == null)
             {
@@ -28,10 +43,7 @@ public class CreateUserEndpoint : IEndpoint
             {
                 return Results.Conflict("Un utilisateur avec le même nom d'utilisateur ou le même email existes déjà.");
             }
-            // Hasher le mot de passe
-            //user.PasswordSalt = BCrypt.Net.BCrypt.GenerateSalt();
-            //user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash, user.PasswordSalt);
-            user.Role = command.Role; // Default role
+            user.Role = command.Role;
             user.IsDeleted = false; // Default not deleted
             user.Id = Guid.NewGuid(); // Generate a new GUID for the user ID
             

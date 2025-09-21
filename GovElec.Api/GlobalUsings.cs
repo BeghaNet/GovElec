@@ -10,3 +10,4 @@ global using Microsoft.EntityFrameworkCore;
 global using System.Security.Claims;
 
 global using Mapster;
+global using FluentValidation;

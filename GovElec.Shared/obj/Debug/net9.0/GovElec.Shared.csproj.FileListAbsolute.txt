@@ -10,3 +10,15 @@ C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\Gov
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\refint\GovElec.Shared.dll
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.pdb
 C:\Users\BG841772\Projets_VsCode\BlazorToApi\GovElec.Shared\obj\Debug\net9.0\ref\GovElec.Shared.dll
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\bin\Debug\net9.0\GovElec.Shared.deps.json
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\bin\Debug\net9.0\GovElec.Shared.dll
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\bin\Debug\net9.0\GovElec.Shared.pdb
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.GeneratedMSBuildEditorConfig.editorconfig
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.AssemblyInfoInputs.cache
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.AssemblyInfo.cs
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.csproj.CoreCompileInputs.cache
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.sourcelink.json
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.dll
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\refint\GovElec.Shared.dll
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\GovElec.Shared.pdb
+L:\Projects\GovElecGitHub\GovElec\GovElec.Shared\obj\Debug\net9.0\ref\GovElec.Shared.dll
