@@ -27,14 +27,27 @@ public static class ServicesExtension
 	}
 	private static IServiceCollection ConfigureHttpClient(this IServiceCollection services, IConfiguration configuration)
 	{
-		services.AddHttpClient("GovElecApi", client =>
-	    {
-		    var timeout = int.Parse(configuration["ApiSettings:TimeoutSeconds"]!);
-		    var retryCount = int.Parse(configuration["ApiSettings:RetryCount"]!);
-		    client.BaseAddress = new Uri(configuration["ApiSettings:BaseUrl"]!);
-		    client.Timeout = TimeSpan.FromSeconds(timeout); // Example: Set a timeout
+		services.AddHttpContextAccessor();
+		services.AddTransient<JwtCookieHandler>();
+		services.AddHttpClient("GovElecApi", (sp, client) =>
+		{
+			var timeout = int.Parse(configuration["ApiSettings:TimeoutSeconds"]!);
+			var retryCount = int.Parse(configuration["ApiSettings:RetryCount"]!);
+			var accessor = sp.GetRequiredService<IHttpContextAccessor>();
+			var req = accessor.HttpContext!.Request;
+			
+			client.BaseAddress = new Uri(configuration["ApiSettings:BaseUrl"]!);
+			client.Timeout = TimeSpan.FromSeconds(timeout); // Example: Set a timeout
+		}).AddHttpMessageHandler<JwtCookieHandler>();
+		
+		// services.AddHttpClient("GovElecApi", client =>
+		// {
+		//     var timeout = int.Parse(configuration["ApiSettings:TimeoutSeconds"]!);
+		//     var retryCount = int.Parse(configuration["ApiSettings:RetryCount"]!);
+		//     client.BaseAddress = new Uri(configuration["ApiSettings:BaseUrl"]!);
+		//     client.Timeout = TimeSpan.FromSeconds(timeout); // Example: Set a timeout
 
-	    });
+		// });
 		return services;
 	}
 	
@@ -50,13 +63,13 @@ public static class ServicesExtension
 				    ValidateLifetime = true,
 				    ValidateIssuerSigningKey = true,
 
-				    // D'après ton JWT : iss = "GovElecApi", aud = "GovElecApplication"
+				    // D'aprï¿½s ton JWT : iss = "GovElecApi", aud = "GovElecApplication"
 				    ValidIssuer = configuration["Jwt:Issuer"],
 				    ValidAudience = configuration["Jwt:Audience"],
 				    IssuerSigningKey = new SymmetricSecurityKey(
 					  Encoding.UTF8.GetBytes(configuration["Jwt:SignInKey"]!)),
 
-				    // Pour les claims Name/Role tels que présents dans ton token
+				    // Pour les claims Name/Role tels que prï¿½sents dans ton token
 				    NameClaimType = ClaimTypes.Name,   // http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name
 				    RoleClaimType = ClaimTypes.Role    // http://schemas.microsoft.com/ws/2008/06/identity/claims/role
 			    };

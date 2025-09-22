@@ -35,12 +35,12 @@ public class Demande
 
     //Les dates
     public DateTime DateCreation { get; set; } = DateTime.Now;
-    public DateTime DateDemandeApprobation { get; set; }
-    public DateTime DateReponseAttendue { get; set; }
-    public DateTime DateReponse { get; set; }
-    public DateTime DateReponseFinale { get; set; }
-    public DateTime DateDebutTravaux { get; set; }
-    public DateTime DateCloture { get; set; }
+    public DateTime DateDemandeApprobation { get; set; }=new DateTime(9999,12,31);
+    public DateTime DateReponseAttendue { get; set; }=new DateTime(9999,12,31);
+    public DateTime DateReponse { get; set; }=new DateTime(9999,12,31);
+    public DateTime DateReponseFinale { get; set; }=new DateTime(9999,12,31);
+    public DateTime DateDebutTravaux { get; set; }=new DateTime(9999,12,31);
+    public DateTime DateCloture { get; set; }=new DateTime(9999,12,31);
 
     public bool IsDeleted { get; set; } = false;
     //Les liens

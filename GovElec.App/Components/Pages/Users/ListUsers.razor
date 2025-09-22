@@ -1,5 +1,38 @@
-﻿<h3>ListUsers</h3>
+﻿@page "/users"
+@* @inject HttpClient http *@
+@inject IHttpClientFactory clientFactory
+@inject IHttpContextAccessor httpContextAccessor
+
+
+<AuthorizeView Roles="Admin,SuperAdmin">
+    <Authorized >
+        @if(users==null){
+            <p>Loading...</p>
+        }
+        else{
+            foreach(var user in users){
+                <_UserListitem User=user/>
+
+            }
+        }
+    </Authorized>
+    <NotAuthorized>
+        <_RedirectToAccessDenied />
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
+    List<UserForListResponse>users{get;set;}=new();
+    protected override async Task OnInitializedAsync()
+    {
+        //var result=await http.GetFromJsonAsync<List<UserForListResponse>>("/api/users");
+        @* var http=clientFactory.CreateClient("GovElecApi");
+        users=await http.GetFromJsonAsync<List<UserForListResponse>>("/api/users")??new(); *@
+        var token=httpContextAccessor.HttpContext.Request.Cookies["token"];
+        var http=clientFactory.CreateClient("GovElecApi");
+        http.DefaultRequestHeaders.Authorization=new AuthenticationHeaderValue("Bearer",token);
+        users=await http.GetFromJsonAsync<List<UserForListResponse>>("/api/users")??new();
 
+        //return base.OnInitializedAsync();
+    }
 }

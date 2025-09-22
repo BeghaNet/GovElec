@@ -8,38 +8,3 @@
 
 <h1>Hello, world!</h1>
 <br/>
-<AuthorizeView >
-@if(persons.Count==0){
-    <p>Loading...</p>
-}
-else{
-    <p>Welcome to your new app.</p>
-    <div>
-        @foreach(var person in persons){
-            <_PersonListitemComponent person="@person"/>
-        }
-    </div>
-}
-</AuthorizeView>
-
-<div><a href="/persons/create" class="btn btn-success">Ajouter</a></div>
-
-
-@code{
-    List<Person> persons = new();
-    
-
-    protected override async Task OnInitializedAsync()
-    {
-        //apiUrl=Http.BaseAddress + apiUrl;
-        persons = await Http.GetFromJsonAsync<List<Person>>("api/persons") ?? new();
-        if (persons == null)
-        {
-            persons = new List<Person>();
-        }
-        else
-        {
-            persons = persons.OrderBy(p => p.Id).ToList();
-        }
-    }
-}
