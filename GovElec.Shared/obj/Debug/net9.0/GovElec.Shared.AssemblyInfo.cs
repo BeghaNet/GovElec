@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GovElec.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d38b56fa5bfb7e8c52a4af535e97edf4e356ec3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+977c745e5680f6c75846eef4db18b413e760bd6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GovElec.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GovElec.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

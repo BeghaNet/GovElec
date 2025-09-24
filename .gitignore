@@ -32,3 +32,7 @@ GovElec.Api/obj/Debug/net9.0/GovElec.Api.AssemblyInfo.cs
 /GovElec.Api/obj
 /GovElec.Api/bin
 GovElec.Api/Data/GovElecDb.db
+/GovElec.App/obj
+/GovElec.App/obj
+/GovElec.App/obj/Debug
+/GovElec.Shared/obj
